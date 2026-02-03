@@ -10,7 +10,6 @@ This Flutter web package provides a simple solution for users to navigate throug
 
 While using Flutter Web in Desktop or Laptop, you can not scroll using keyboard up and down keys, So I have developed this package **updown_arrow_scroller**.
 
-
 ## Installation
 
 To use this package, add the following dependency to your `pubspec.yaml` file:
@@ -19,12 +18,13 @@ To use this package, add the following dependency to your `pubspec.yaml` file:
 dependencies:
   updown_arrow_scroller: <latest_version>
 ```
-now import pluin in dart file.
 
+now import pluin in dart file.
 
 ```dart
 import 'package:updown_arrow_scroller/updown_arrow_scroller.dart';
 ```
+
 And use with same ScrollController given to its child Widget as shown in **example**.
 
 ```dart
@@ -32,6 +32,8 @@ final ScrollController _controller = ScrollController();
 
 return UpDownArrowScroller(
             childScrollController: _controller,
+            arrowOffset: 100,
+            animationDurationInMilliseconds: 100,
             child: ListView.separated(
               controller: _controller,
               itemCount: cities.length,
