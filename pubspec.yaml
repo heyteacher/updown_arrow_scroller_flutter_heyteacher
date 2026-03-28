@@ -1,7 +1,11 @@
-name: updown_arrow_scroller
+name: updown_arrow_scroller_flutter_heyteacher
 description: "A new Flutter package that help scrolling web page using keyboard arrow."
-version: 0.0.4
-homepage: https://github.com/KhasInfotech/updown_arrow_scroller.git
+version: 0.1.0
+homepage: https://github.com/heyteacher/updown_arrow_scroller.git
+repository: https://github.com/heyteacher/updown_arrow_scroller
+license: MIT
+issue_tracker: https://github.com/heyteacher/updown_arrow_scroller/issues
+documentation: https://github.com/heyteacher/updown_arrow_scroller
 
 environment:
   sdk: '>=3.2.3 <4.0.0'

@@ -1,4 +1,7 @@
-# updown_arrow_scroller for Flutter Web
+# updown_arrow_scroller_flutter_heyteacher for Flutter Web
+
+> [!IMPORTANT]
+> this is an unoffical fork of <https://github.com/KhasInfotech/updown_arrow_scroller> which contains commits collected in this [pull request](https://github.com/KhasInfotech/updown_arrow_scroller/pull/1)
 
 A Flutter web package that enables keyboard up-down arrow navigation for scrolling through pages.
 

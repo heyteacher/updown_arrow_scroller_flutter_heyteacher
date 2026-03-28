@@ -1,3 +1,7 @@
+## 0.1.0
+
+* Rename in `updown_arrow_scroller_flutter_heyteacher` and publish on `pub.dev` the fork `heyteacher/updown_arrow_scroller`.
+
 ## 0.0.4
 
 * Comment added for simplify understanding.

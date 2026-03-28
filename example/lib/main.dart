@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:updown_arrow_scroller/updown_arrow_scroller.dart';
+import 'package:updown_arrow_scroller_flutter_heyteacher/updown_arrow_scroller.dart';
 
 void main() => runApp(const MyApp());
 
