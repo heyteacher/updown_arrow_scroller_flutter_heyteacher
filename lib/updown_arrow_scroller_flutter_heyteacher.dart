@@ -1,31 +1,26 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 /// Scrolls child widget on press of up and down arrow or page key of Keyboard
 class UpDownArrowScroller extends StatefulWidget {
-  /// Creates a [UpDownArrowScroller] on [child].
+  /// Creates a [UpDownArrowScroller] on [_child].
   ///
   /// If up or down arrow key is pressed, scollbar is moved up or down of
-  /// [arrowOffset] pixels (default [defaultArrowOffset]).
+  /// [_arrowOffset] pixels (default [defaultArrowOffset]).
   ///
   /// If up or down page key is pressed, scrollbar in moved up or down of
-  /// [child] height.
+  /// [_child] height.
   ///
-  /// The movement is animated with a [animationDurationInMilliseconds]
+  /// The movement is animated with a [_animationDurationInMilliseconds]
   /// milliseconds duration (default [defaultAnimationDurationInMilliseconds]).
   const UpDownArrowScroller({
-    required ScrollController childScrollController,
-    required Widget child,
-    int arrowOffset = defaultArrowOffset,
-    int animationDurationInMilliseconds =
+    required this._childScrollController,
+    required this._child,
+    this._arrowOffset = defaultArrowOffset,
+    this._animationDurationInMilliseconds =
         defaultAnimationDurationInMilliseconds,
     super.key,
-  })  : _childScrollController = childScrollController,
-        _child = child,
-        _arrowOffset = arrowOffset,
-        _animationDurationInMilliseconds = animationDurationInMilliseconds;
+  });
 
   /// The default arrow offset in pixels
   static const defaultArrowOffset = 100;
@@ -60,26 +55,22 @@ class _UpDownArrowScrollerState extends State<UpDownArrowScroller> {
 
   @override
   Widget build(BuildContext context) => KeyboardListener(
-        focusNode: _focusNode,
-        onKeyEvent: _handleKeyEvent,
-        autofocus: true,
-        child: widget._child,
-      );
+    focusNode: _focusNode,
+    onKeyEvent: _handleKeyEvent,
+    autofocus: true,
+    child: widget._child,
+  );
 
-  void _handleKeyEvent(KeyEvent event) => event is KeyDownEvent &&
-     _arrowsKeys.contains(event.logicalKey)
+  void _handleKeyEvent(KeyEvent event) =>
+      event is KeyDownEvent && _arrowsKeys.contains(event.logicalKey)
       ? setState(() {
-          unawaited(
-            widget._childScrollController.animateTo(
-              widget._childScrollController.offset +
-                  _offset(
-                    context: context,
-                    keyboardKey: event.logicalKey,
-                  ),
-              duration: Duration(
-                  milliseconds: widget._animationDurationInMilliseconds,),
-              curve: Curves.ease,
+          widget._childScrollController.animateTo(
+            widget._childScrollController.offset +
+                _offset(context: context, keyboardKey: event.logicalKey),
+            duration: Duration(
+              milliseconds: widget._animationDurationInMilliseconds,
             ),
+            curve: Curves.ease,
           );
         })
       : null;

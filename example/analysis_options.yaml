@@ -3,3 +3,8 @@ include: package:very_good_analysis/analysis_options.yaml
 analyzer:
   exclude:
     - '**.g.dart'
+    - build/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
