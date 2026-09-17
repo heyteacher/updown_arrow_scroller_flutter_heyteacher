@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+* Update github urls in `pubspec.yaml` pointing to `heyteacher/updown_arrow_scroller_flutter_heyteacher` repository
+
 ## 0.1.1
 
 * Upgrade sdk minimum constrants to `3.12.0`, flutter minimun constraints to `3.47.0` and  upgrade dependencies.
